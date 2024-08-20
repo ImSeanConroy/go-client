@@ -3,6 +3,7 @@ package client
 import (
 	"errors"
 	"io"
+	"log"
 	"net/http"
 	"testing"
 
@@ -25,7 +26,10 @@ func (r ErrReader) Read(buf []byte) (int, error) {
 }
 
 func testClient() Client {
-	client := NewClient(testURL, testToken)
+	client, err := NewClient(testURL, testToken)
+	if err != nil {
+		log.Fatalf("Error creating client: %v", err)
+	}
 	gock.InterceptClient(client.HttpClient)
 	return *client
 }

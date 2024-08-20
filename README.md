@@ -22,7 +22,10 @@ import (
 
 func main() {
 	token := "YOUR_TOKEN"
-	client := client.NewClient("http://localhost:3000", token)
+	client, err := client.NewClient("http://localhost:3000", token)
+	if err != nil {
+		log.Fatalf("Error creating client: %v", err)
+	}
 
 	res, _ := client.Get("/tasks")
 	fmt.Println(res.Get("0.description").String())

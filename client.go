@@ -18,12 +18,13 @@ type Client struct {
 }
 
 // NewClient creates a new HTTP client instance.
-func NewClient(baseURL, token string) *Client {
-	return &Client{
+func NewClient(baseURL, token string) (*Client, error) {
+	client := &Client{
 		BaseURL:    baseURL,
 		HttpClient: &http.Client{},
 		Token:      token,
 	}
+	return client, nil
 }
 
 // Do performs an HTTP request and returns the response as a gjson.Result.
