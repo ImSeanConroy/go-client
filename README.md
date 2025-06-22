@@ -5,7 +5,7 @@ Go client library for custom Terraform Provider
 
 ### Installing
 
-To start using `go-client`, install Go and `go get`:
+To start using `go-client`, install Go and the following command:
 
 `$ go get -u github.com/imseanconroy/go-client`
 
@@ -37,3 +37,15 @@ This will print something like:
 ```
 Create go client
 ```
+
+## Contributing
+
+Contributions are welcome. Please open an issue or submit a pull request for any enhancements or bug fixes.
+
+## License
+
+This project is Distributed under the MIT License - see the [LICENSE](LICENSE) file for information.
+
+## Support
+
+If you are having problems, please let me know by [raising a new issue](https://github.com/ImSeanConroy/go-client/issues/new/choose).
